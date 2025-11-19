@@ -10,7 +10,7 @@ const testimonials = [
     bgColor: "bg-[#3B3B3B]",
     textColor: "text-white",
     cardBg: "bg-[#F2F2F2]",
-    cardText: "text-gray-600",
+    cardText: "text-gray-700",
     borderHover: "hover:border-[#C3FFD4]",
   },
   {
@@ -22,7 +22,7 @@ const testimonials = [
     bgColor: "bg-[#C3FFD4]",
     textColor: "text-[#3B3B3B]",
     cardBg: "bg-[#3B3B3B]",
-    cardText: "text-gray-300",
+    cardText: "text-gray-200",
     authorColor: "text-[#C3FFD4]",
     roleColor: "text-gray-400",
     decorative: true,
@@ -36,7 +36,7 @@ const testimonials = [
     bgColor: "bg-[#839CC7]",
     textColor: "text-white",
     cardBg: "bg-[#F2F2F2]",
-    cardText: "text-gray-600",
+    cardText: "text-gray-700",
     borderHover: "hover:border-[#B5FFFF]",
   },
 ];
@@ -49,7 +49,7 @@ export const Testimonials = () => {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
               <MessageSquareQuote className="text-[#839CC7]" />
-              <span className="text-sm font-bold text-[#839CC7] uppercase tracking-widest">
+              <span className="text-sm font-bold text-[#3B3B3B] uppercase tracking-widest">
                 Depoimentos
               </span>
             </div>
@@ -113,7 +113,7 @@ export const Testimonials = () => {
                   </div>
                   <div
                     className={`text-xs ${
-                      testimonial.roleColor || "text-gray-500"
+                      testimonial.roleColor || "text-gray-600"
                     }`}
                   >
                     {testimonial.role}

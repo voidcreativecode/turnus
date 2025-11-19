@@ -110,7 +110,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
           <h2 className="font-serif-brand text-4xl md:text-5xl text-white mb-6">
             Planos que crescem com sua operação
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
             Escolha a estrutura ideal para sua unidade. Cancele ou altere quando
             quiser.
           </p>
@@ -187,7 +187,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
               </h3>
               <p
                 className={`text-sm ${
-                  plan.featured ? "text-gray-400" : "text-gray-500"
+                  plan.featured ? "text-gray-400" : "text-gray-600"
                 } mb-6 h-10`}
               >
                 {plan.description}
@@ -197,7 +197,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
                   <>
                     <span
                       className={`text-sm ${
-                        plan.featured ? "text-gray-400" : "text-gray-500"
+                        plan.featured ? "text-gray-400" : "text-gray-600"
                       }`}
                     >
                       R$
@@ -213,7 +213,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
                     </span>
                     <span
                       className={`${
-                        plan.featured ? "text-gray-400" : "text-gray-500"
+                        plan.featured ? "text-gray-400" : "text-gray-600"
                       }`}
                     >
                       /mês

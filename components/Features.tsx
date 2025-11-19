@@ -47,7 +47,7 @@ export const Features = () => {
                 <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                   <div className="w-[92%] h-full bg-[#3B3B3B]"></div>
                 </div>
-                <div className="flex justify-between text-xs text-gray-400 mt-2">
+                <div className="flex justify-between text-xs text-gray-600 mt-2">
                   <span>Cobertura</span>
                   <span>92%</span>
                 </div>
@@ -100,7 +100,7 @@ export const Features = () => {
                 <div className="p-3 space-y-2">
                   <div className="bg-[#F2F2F2] p-2 rounded-lg text-xs">
                     <div className="font-bold text-[#3B3B3B]">UTI Geral</div>
-                    <div className="text-gray-500">07:00 - 19:00</div>
+                    <div className="text-gray-600">07:00 - 19:00</div>
                   </div>
                   <div className="bg-[#D9FFE4] p-2 rounded-lg text-xs flex justify-between items-center">
                     <span className="text-green-800 font-medium">
