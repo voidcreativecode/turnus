@@ -65,7 +65,7 @@ export const Navigation = ({
               <span className="font-serif-brand text-2xl tracking-tight block leading-none">
                 Turnus
               </span>
-              <span className="font-sans-brand text-[0.65rem] uppercase tracking-widest text-[#65748D] hidden md:block">
+              <span className="font-sans-brand text-[0.65rem] uppercase tracking-widest text-[#4A5568] hidden md:block">
                 Tempus sub control
               </span>
             </div>

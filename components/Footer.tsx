@@ -20,7 +20,7 @@ export const Footer = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-12">
             <div>
-              <h4 className="font-bold mb-4 text-[#B5FFFF]">Produto</h4>
+              <h3 className="font-bold mb-4 text-[#B5FFFF]">Produto</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="hover:text-white cursor-pointer">
                   Funcionalidades
@@ -33,7 +33,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-[#B5FFFF]">Empresa</h4>
+              <h3 className="font-bold mb-4 text-[#B5FFFF]">Empresa</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="hover:text-white cursor-pointer">Sobre Nós</li>
                 <li className="hover:text-white cursor-pointer">Blog</li>
@@ -41,7 +41,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-[#B5FFFF]">Legal</h4>
+              <h3 className="font-bold mb-4 text-[#B5FFFF]">Legal</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="hover:text-white cursor-pointer">Privacidade</li>
                 <li className="hover:text-white cursor-pointer">Termos</li>
@@ -51,7 +51,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-400">
             © 2024 Turnus. Todos os direitos reservados.
           </span>
 

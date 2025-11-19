@@ -97,11 +97,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.json",
-  verification: {
-    google: "seu-codigo-google-search-console",
-    // yandex: "seu-codigo-yandex",
-    // bing: "seu-codigo-bing",
-  },
+  // verification: {
+  //   google: "codigo-opcional-se-ja-verificado-via-dns",
+  // },
   alternates: {
     canonical: "https://turnus.app.br",
   },

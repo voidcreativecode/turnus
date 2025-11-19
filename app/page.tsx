@@ -29,14 +29,16 @@ const TurnusSPA = () => {
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
       />
-      <Hero />
-      <Features />
-      <Testimonials />
-      <Pricing
-        annualBilling={annualBilling}
-        setAnnualBilling={setAnnualBilling}
-      />
-      <CTA />
+      <main>
+        <Hero />
+        <Features />
+        <Testimonials />
+        <Pricing
+          annualBilling={annualBilling}
+          setAnnualBilling={setAnnualBilling}
+        />
+        <CTA />
+      </main>
       <Footer />
     </div>
   );

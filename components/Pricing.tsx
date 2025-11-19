@@ -119,14 +119,23 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
           <div className="flex items-center justify-center gap-4 mb-8">
             <span
               className={`text-sm font-medium transition-colors ${
-                !annualBilling ? "text-white" : "text-gray-500"
+                annualBilling ? "text-white" : "text-gray-400"
               }`}
             >
               Mensal
             </span>
             <button
               onClick={() => setAnnualBilling(!annualBilling)}
-              className="w-16 h-8 bg-[#4A5568] rounded-full p-1 relative transition-colors hover:bg-[#5A6B85]"
+              className={`w-16 h-8 bg-[#4A5568] rounded-full p-1 relative transition-colors ${
+                annualBilling ? "bg-[#C3FFD4]" : "bg-[#4A5568]"
+              } hover:bg-[#5A6678]`}
+              aria-label={
+                annualBilling
+                  ? "Mudar para cobrança mensal"
+                  : "Mudar para cobrança anual"
+              }
+              role="switch"
+              aria-checked={annualBilling}
             >
               <div
                 className={`w-6 h-6 bg-[#C3FFD4] rounded-full shadow-md transform transition-transform duration-300 ${
@@ -136,7 +145,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
             </button>
             <span
               className={`text-sm font-medium transition-colors ${
-                annualBilling ? "text-white" : "text-gray-500"
+                annualBilling ? "text-white" : "text-gray-400"
               }`}
             >
               Anual{" "}
