@@ -37,7 +37,16 @@ export const Navigation = ({
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const href = e.currentTarget.getAttribute("href");
-    if (href?.startsWith("#")) {
+
+    if (!href) return;
+
+    if (href.startsWith("#")) {
+      if (pathname !== "/") {
+        router.push(`/${href}`);
+        setMobileMenuOpen(false);
+        return;
+      }
+
       const element = document.querySelector(href);
       if (element) {
         const offset = 80; // altura do header
@@ -53,6 +62,9 @@ export const Navigation = ({
         window.history.pushState({}, "", window.location.pathname);
         setMobileMenuOpen(false);
       }
+    } else {
+      router.push(href);
+      setMobileMenuOpen(false);
     }
   };
 

@@ -1,6 +1,8 @@
 "use client";
 
+import { CookieBanner } from "@/components/CookieBanner";
 import { CTA } from "@/components/CTA";
+import { FAQ } from "@/components/FAQ";
 import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -37,9 +39,11 @@ const TurnusSPA = () => {
           setAnnualBilling={setAnnualBilling}
         />
         <Testimonials />
+        <FAQ />
         <CTA />
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   );
 };
