@@ -32,11 +32,11 @@ const TurnusSPA = () => {
       <main>
         <Hero />
         <Features />
-        <Testimonials />
         <Pricing
           annualBilling={annualBilling}
           setAnnualBilling={setAnnualBilling}
         />
+        <Testimonials />
         <CTA />
       </main>
       <Footer />

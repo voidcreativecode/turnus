@@ -7,9 +7,7 @@ import {
   Mail,
   MessageCircle,
   Smartphone,
-  TrendingUp,
   Users,
-  Zap,
 } from "lucide-react";
 
 interface PricingProps {
@@ -22,8 +20,34 @@ const plans = [
     tier: "Inicial",
     name: "Turnus Start",
     description: "Para clínicas e pequenas unidades iniciando a organização.",
-    priceMonthly: 500,
-    priceAnnual: 400,
+    priceMonthly: 150,
+    priceAnnual: 120,
+    features: [
+      {
+        icon: Users,
+        text: "Até 50 usuários ativos",
+        highlight: "50 usuários",
+      },
+      {
+        icon: Activity,
+        text: "1 escala (setor)",
+        highlight: "1 escala",
+      },
+      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
+      { icon: Mail, text: "Notificações via E-mail", highlight: "E-mail" },
+      { icon: LifeBuoy, text: "Suporte via E-mail" },
+    ],
+    buttonText: "Começar Agora",
+    bgColor: "bg-[#F2F2F2]",
+    textColor: "text-[#3B3B3B]",
+    borderHover: "hover:border-gray-300",
+  },
+  {
+    tier: "Crescimento",
+    name: "Turnus Plus",
+    description: "Para unidades em expansão que precisam de mais recursos.",
+    priceMonthly: 1150,
+    priceAnnual: 920,
     features: [
       {
         icon: Users,
@@ -35,21 +59,26 @@ const plans = [
         text: "Até 5 escalas (setores)",
         highlight: "5 escalas",
       },
-      { icon: Smartphone, text: "App para Plantonistas" },
-      { icon: Mail, text: "Notificações via E-mail", highlight: "E-mail" },
-      { icon: LifeBuoy, text: "Suporte via Chamado (48h)" },
+      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
+      { icon: Mail, text: "Notificações via E-mail" },
+      {
+        icon: MessageCircle,
+        text: "Notificações via WhatsApp",
+        highlight: "WhatsApp",
+      },
+      { icon: LifeBuoy, text: "Suporte via E-mail e WhatsApp" },
     ],
-    buttonText: "Começar Agora",
-    bgColor: "bg-[#F2F2F2]",
-    textColor: "text-[#3B3B3B]",
-    borderHover: "hover:border-gray-300",
+    buttonText: "Escolher Plus",
+    bgColor: "bg-[#3B3B3B]",
+    textColor: "text-white",
+    featured: true,
   },
   {
-    tier: "Intermediário",
+    tier: "Profissional",
     name: "Turnus Pro",
     description: "Para hospitais e gestores que precisam de agilidade total.",
-    priceMonthly: 940,
-    priceAnnual: 750,
+    priceMonthly: 700,
+    priceAnnual: 560,
     features: [
       {
         icon: Users,
@@ -61,33 +90,39 @@ const plans = [
         text: "Até 10 escalas (setores)",
         highlight: "10 escalas",
       },
-      { icon: Zap, text: "Trocas Automatizadas" },
+      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
+      { icon: Mail, text: "Notificações via E-mail" },
       {
         icon: MessageCircle,
         text: "Notificações via WhatsApp",
         highlight: "WhatsApp",
       },
-      { icon: TrendingUp, text: "Relatórios Financeiros" },
-      { icon: LifeBuoy, text: "Suporte Prioritário (24h)" },
+      { icon: LifeBuoy, text: "Suporte Prioritário via E-mail e WhatsApp" },
     ],
-    buttonText: "Escolher Profissional",
-    bgColor: "bg-[#3B3B3B]",
-    textColor: "text-white",
-    featured: true,
+    buttonText: "Escolher Pro",
+    bgColor: "bg-[#F2F2F2]",
+    textColor: "text-[#3B3B3B]",
+    borderHover: "hover:border-gray-300",
   },
   {
     tier: "Enterprise",
     name: "Turnus Corp",
-    description: "Para grandes redes hospitalares e cooperativas médicas.",
+    description:
+      "Para grandes redes com infraestrutura própria e multi-tenant.",
     priceMonthly: null,
     priceAnnual: null,
     features: [
-      { icon: Users, text: "Usuários Ilimitados", highlight: "Ilimitados" },
-      { icon: Activity, text: "Escalas Ilimitadas", highlight: "Ilimitadas" },
-      { icon: Check, text: "Gestão Multi-unidade" },
-      { icon: Check, text: "API de Integração (ERP)" },
+      { icon: Users, text: "Usuários customizados", highlight: "Customizado" },
+      {
+        icon: Activity,
+        text: "Escalas customizadas",
+        highlight: "Customizado",
+      },
+      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
+      { icon: Check, text: "Infraestrutura própria" },
       { icon: Check, text: "Gerente de Conta Dedicado" },
-      { icon: Check, text: "Onboarding Presencial" },
+      { icon: Check, text: "Onboarding Presencial**", highlight: "**" },
+      { icon: LifeBuoy, text: "Suporte Prioritário Dedicado" },
     ],
     buttonText: "Falar com Consultor",
     bgColor: "bg-[#F2F2F2]",
@@ -110,7 +145,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
           <h2 className="font-serif-brand text-4xl md:text-5xl text-white mb-6">
             Planos que crescem com sua operação
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
             Escolha a estrutura ideal para sua unidade. Cancele ou altere quando
             quiser.
           </p>
@@ -156,13 +191,15 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`${plan.bgColor} rounded-3xl p-8 border ${
+              className={`${
+                plan.bgColor
+              } rounded-3xl p-8 border flex flex-col ${
                 plan.featured
-                  ? "border-2 border-[#C3FFD4] relative transform md:scale-105 shadow-2xl z-10"
+                  ? "border-2 border-[#C3FFD4] relative transform lg:scale-110 shadow-2xl z-10"
                   : `border-transparent ${plan.borderHover}`
               } transition-all`}
             >
@@ -227,7 +264,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
               </div>
 
               <div
-                className={`space-y-4 mb-8 ${
+                className={`space-y-4 mb-8 flex-grow ${
                   plan.featured ? "text-gray-300" : ""
                 }`}
               >
@@ -277,11 +314,19 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
         </div>
 
         {/* Footer note for pricing */}
-        <div className="text-center mt-12 text-gray-500 text-sm">
-          <p>
+        <div className="text-center mt-12 space-y-3">
+          <p className="text-gray-300 text-sm">
             Todos os planos incluem atualizações gratuitas e segurança de dados
             padrão LGPD.
           </p>
+          <div className="space-y-1">
+            <p className="text-gray-400 text-xs">
+              * App nativo disponível quando lançado
+            </p>
+            <p className="text-gray-400 text-xs">
+              ** Onboarding presencial mediante disponibilidade
+            </p>
+          </div>
         </div>
       </div>
     </section>

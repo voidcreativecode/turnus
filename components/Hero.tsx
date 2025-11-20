@@ -9,8 +9,8 @@ export const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-8 animate-fade-in-up">
           <span className="w-2 h-2 rounded-full bg-[#C3FFD4] border border-[#3B3B3B]"></span>
-          <span className="text-xs font-semibold tracking-wide uppercase text-gray-500">
-            Nova versão 2.0 disponível
+          <span className="text-xs font-semibold tracking-wide uppercase text-gray-600">
+            Confiado por +150 plantonistas e gestores
           </span>
         </div>
 
@@ -21,7 +21,7 @@ export const Hero = () => {
 
         <p className="font-sans-brand text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
           O <strong>Turnus</strong> substitui planilhas caóticas por
-          inteligência automatizada. Controle escalas, trocas e pagamentos em
+          inteligência automatizada. Controle escalas, trocas e relatórios em
           uma única plataforma sofisticada.
         </p>
 

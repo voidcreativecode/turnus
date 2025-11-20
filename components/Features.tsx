@@ -1,4 +1,4 @@
-import { CheckCircle, Clock, Shield, TrendingUp, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, TrendingUp, Zap } from "lucide-react";
 import { HourglassLogo } from "./HourglassLogo";
 
 export const Features = () => {
@@ -9,9 +9,9 @@ export const Features = () => {
           <h2 className="font-serif-brand text-4xl md:text-5xl text-[#3B3B3B] mb-4">
             Tempus sub control.
           </h2>
-          <p className="text-gray-500 text-lg">
-            Uma suíte completa de ferramentas desenhada para eliminar o caos da
-            gestão hospitalar e clínica.
+          <p className="text-gray-600 text-lg">
+            Ferramentas inteligentes que transformam a complexidade da gestão de
+            escalas em processos simples e automatizados.
           </p>
         </div>
 
@@ -27,53 +27,58 @@ export const Features = () => {
                   <Zap />
                 </div>
                 <h3 className="font-serif-brand text-3xl mb-4">
-                  Escala Inteligente & Automatizada
+                  Disponibilização & Candidatura Inteligente
                 </h3>
                 <p className="text-gray-600 text-lg max-w-md">
-                  Nosso algoritmo evita conflitos de horário, respeita as regras
-                  de descanso e preenche buracos na escala automaticamente em
-                  segundos.
+                  Plantonistas disponibilizam plantões que não podem cumprir.
+                  Outros profissionais se candidatam e nosso algoritmo seleciona
+                  automaticamente com base nos critérios do gestor. Trocas
+                  diretas também são validadas pelo sistema.
                 </p>
               </div>
               <div className="mt-8 bg-white rounded-xl p-4 shadow-sm border border-gray-100 max-w-sm transform group-hover:translate-x-2 transition-transform">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                    <CheckCircle size={16} />
+                  <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+                    <Clock size={16} />
                   </div>
                   <span className="text-sm font-bold text-gray-700">
-                    Escala Dr. André confirmada
+                    3 candidatos para UTI - 19h
                   </span>
                 </div>
-                <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
-                  <div className="w-[92%] h-full bg-[#3B3B3B]"></div>
-                </div>
-                <div className="flex justify-between text-xs text-gray-600 mt-2">
-                  <span>Cobertura</span>
-                  <span>92%</span>
+                <div className="flex gap-2 mt-3">
+                  <div className="flex-1 bg-green-50 border border-green-200 rounded-lg p-2 text-xs">
+                    <div className="font-bold text-green-800">Dr. Silva</div>
+                    <div className="text-green-600">98% match</div>
+                  </div>
+                  <div className="flex-1 bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs">
+                    <div className="font-bold text-gray-700">Dra. Costa</div>
+                    <div className="text-gray-600">85% match</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 2: Security */}
+          {/* Card 2: Trades */}
           <div className="bg-[#3B3B3B] rounded-[2rem] p-8 text-white relative overflow-hidden bento-card">
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#839CC7] opacity-20 rounded-full blur-2xl"></div>
-            <Shield className="text-[#C3FFD4] mb-4 w-10 h-10" />
-            <h3 className="font-serif-brand text-2xl mb-2">Compliance</h3>
+            <Clock className="text-[#C3FFD4] mb-4 w-10 h-10" />
+            <h3 className="font-serif-brand text-2xl mb-2">Trocas Diretas</h3>
             <p className="text-gray-300 text-sm">
-              Regras da categoria e limites de horas monitorados em tempo real.
+              Um oferece, outro aceita. Negociações simplificadas entre
+              plantonistas.
             </p>
           </div>
 
-          {/* Card 3: Finance */}
+          {/* Card 3: Reports */}
           <div className="bg-[#D9FFE4] rounded-[2rem] p-8 relative overflow-hidden bento-card border border-[#C3FFD4]">
             <TrendingUp className="text-[#3B3B3B] mb-4 w-10 h-10" />
             <h3 className="font-serif-brand text-2xl mb-2 text-[#3B3B3B]">
-              Financeiro
+              Relatórios
             </h3>
             <p className="text-[#4A5568] text-sm">
-              Cálculo automático de valores de plantão por complexidade e
-              horário.
+              Dashboards e relatórios completos de escalas, horas e cobertura em
+              tempo real.
             </p>
           </div>
 
@@ -88,28 +93,12 @@ export const Features = () => {
             </p>
 
             {/* Phone Mockup */}
-            <div className="w-48 bg-[#3B3B3B] rounded-[2rem] p-2 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 border-4 border-[#4A5568]">
-              <div className="bg-white rounded-[1.5rem] overflow-hidden h-64 relative">
-                {/* Mock App UI */}
-                <div className="bg-[#3B3B3B] p-4 text-white">
-                  <div className="text-xs opacity-70">Olá, Dr. Silva</div>
-                  <div className="font-serif-brand text-lg">
-                    Próximo Plantão
-                  </div>
-                </div>
-                <div className="p-3 space-y-2">
-                  <div className="bg-[#F2F2F2] p-2 rounded-lg text-xs">
-                    <div className="font-bold text-[#3B3B3B]">UTI Geral</div>
-                    <div className="text-gray-600">07:00 - 19:00</div>
-                  </div>
-                  <div className="bg-[#D9FFE4] p-2 rounded-lg text-xs flex justify-between items-center">
-                    <span className="text-green-800 font-medium">
-                      Troca Solicitada
-                    </span>
-                    <Clock size={12} className="text-green-800" />
-                  </div>
-                </div>
-              </div>
+            <div className="relative z-10 transform hover:scale-105 transition-transform duration-500 flex-1 flex items-center justify-center">
+              <img
+                src="/iPhone 15 Pro Max.png"
+                alt="App Turnus no iPhone"
+                className="w-full max-w-xs h-auto drop-shadow-2xl scale-125"
+              />
             </div>
           </div>
 
@@ -117,25 +106,49 @@ export const Features = () => {
           <div className="md:col-span-2 bg-[#839CC7]/10 rounded-[2rem] p-8 flex flex-col md:flex-row items-center gap-8 bento-card border border-[#839CC7]/20">
             <div className="flex-1">
               <h3 className="font-serif-brand text-2xl mb-3 text-[#3B3B3B]">
-                Trocas sem atrito
+                Escalas Automáticas com Templates
               </h3>
               <p className="text-gray-600 text-sm">
-                O Turnus permite que os profissionais negociem trocas de plantão
-                diretamente pelo app. O gestor apenas aprova ou o sistema valida
-                automaticamente baseado em regras pré-definidas.
+                Configure um template uma vez e reutilize mês a mês. O sistema
+                gera escalas completas automaticamente com base nas suas regras.
+                Gerenciamento simples, resultados consistentes.
               </p>
             </div>
-            <div className="flex -space-x-4">
-              <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs font-bold text-gray-600">
-                DR
+            <div className="flex flex-col gap-2">
+              <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                <CheckCircle size={16} className="text-green-600" />
+                <span className="text-xs font-medium text-gray-700">
+                  Templates reutilizáveis
+                </span>
               </div>
-              <div className="w-12 h-12 rounded-full border-2 border-white bg-gray-300 flex items-center justify-center text-xs font-bold text-gray-600">
-                ENF
+              <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                <CheckCircle size={16} className="text-green-600" />
+                <span className="text-xs font-medium text-gray-700">
+                  Geração automática
+                </span>
               </div>
-              <div className="w-12 h-12 rounded-full border-2 border-white bg-[#3B3B3B] text-[#C3FFD4] flex items-center justify-center text-xs font-bold">
-                +40
+              <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 shadow-sm">
+                <CheckCircle size={16} className="text-green-600" />
+                <span className="text-xs font-medium text-gray-700">
+                  Gestão simplificada
+                </span>
               </div>
             </div>
+          </div>
+
+          {/* Card 6: CTA Marketing */}
+          <div className="md:col-span-2 bg-[#C3FFD4] rounded-4xl p-8 md:p-12 bento-card border-2 border-[#C3FFD4] flex flex-col items-center justify-center text-center gap-6 shadow-[0_0_30px_rgba(195,255,212,0.3)] relative overflow-hidden group hover:scale-[1.02] transition-transform">
+            <div className="absolute inset-0 bg-[#3B3B3B] opacity-0 group-hover:opacity-5 transition-opacity"></div>
+            <h3 className="font-serif-brand text-2xl md:text-3xl lg:text-4xl text-[#3B3B3B] leading-tight relative z-10">
+              Organize. Automatize. Simplifique.
+            </h3>
+            <button className="bg-[#3B3B3B] text-white px-4 py-2 rounded-2xl font-bold text-lg hover:bg-black transition-all shadow-xl hover:shadow-2xl inline-flex items-center gap-2 group/btn relative z-10">
+              Começar agora
+              <ArrowRight
+                size={22}
+                className="group-hover/btn:translate-x-2 transition-transform"
+              />
+            </button>
           </div>
         </div>
       </div>
