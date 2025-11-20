@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 export const CTA = () => {
   return (
     <section
-      className="py-20 relative"
+      className="py-60 relative"
       id="contato"
       style={{
         background: "linear-gradient(to bottom, white 50%, #839CC7 50%)",
@@ -11,21 +11,20 @@ export const CTA = () => {
     >
       <div className="container mx-auto px-6">
         <div
-          className="relative bg-gradient-to-br from-[#3B3B3B] to-[#4A5568] overflow-hidden shadow-2xl"
+          className="relative bg-linear-to-br from-[#3B3B3B] to-[#4A5568] overflow-hidden shadow-2xl"
           style={{
-            borderRadius: "4rem 1rem 4rem 1rem",
+            borderRadius: "8rem 1rem 8rem 1rem",
           }}
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Imagem à esquerda */}
             <div className="relative h-full min-h-[400px] lg:min-h-[500px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#3B3B3B]/50 z-10"></div>
               <img
                 src="/cta.avif"
                 alt="Profissional usando Turnus"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{
-                  borderRadius: "4rem 0 0 1rem",
+                  borderRadius: "8rem 0 8rem 1rem",
                 }}
               />
             </div>

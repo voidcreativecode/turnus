@@ -17,7 +17,7 @@ export const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(180px,auto)]">
           {/* Card 1: Main Feature (Large) */}
-          <div className="md:col-span-2 row-span-2 bg-[#F2F2F2] rounded-[2rem] p-8 md:p-12 relative overflow-hidden group bento-card border border-transparent hover:border-[#DBDBDB]">
+          <div className="md:col-span-2 row-span-2 bg-[#F2F2F2] rounded-4xl p-8 md:p-12 relative overflow-hidden group bento-card border border-transparent hover:border-[#DBDBDB]">
             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
               <HourglassLogo className="w-64 h-64" />
             </div>
@@ -60,7 +60,7 @@ export const Features = () => {
           </div>
 
           {/* Card 2: Trades */}
-          <div className="bg-[#3B3B3B] rounded-[2rem] p-8 text-white relative overflow-hidden bento-card">
+          <div className="bg-[#3B3B3B] rounded-4xl p-8 text-white relative overflow-hidden bento-card">
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#839CC7] opacity-20 rounded-full blur-2xl"></div>
             <Clock className="text-[#C3FFD4] mb-4 w-10 h-10" />
             <h3 className="font-serif-brand text-2xl mb-2">Trocas Diretas</h3>
@@ -71,7 +71,7 @@ export const Features = () => {
           </div>
 
           {/* Card 3: Reports */}
-          <div className="bg-[#D9FFE4] rounded-[2rem] p-8 relative overflow-hidden bento-card border border-[#C3FFD4]">
+          <div className="bg-[#D9FFE4] rounded-4xl p-8 relative overflow-hidden bento-card border border-[#C3FFD4]">
             <TrendingUp className="text-[#3B3B3B] mb-4 w-10 h-10" />
             <h3 className="font-serif-brand text-2xl mb-2 text-[#3B3B3B]">
               Relatórios
@@ -83,8 +83,8 @@ export const Features = () => {
           </div>
 
           {/* Card 4: Mobile (Tall) */}
-          <div className="md:col-span-1 row-span-2 bg-white rounded-[2rem] p-8 border border-gray-100 bento-card flex flex-col items-center text-center relative overflow-hidden">
-            <div className="absolute top-0 w-full h-32 bg-gradient-to-b from-[#B5FFFF]/20 to-transparent"></div>
+          <div className="md:col-span-1 row-span-2 bg-white rounded-4xl p-8 border border-gray-100 bento-card flex flex-col items-center text-center relative overflow-hidden">
+            <div className="absolute top-0 w-full h-32 bg-linear-to-b from-[#B5FFFF]/20 to-transparent"></div>
             <h3 className="font-serif-brand text-2xl mb-2 mt-4 relative z-10">
               App Nativo
             </h3>
@@ -103,7 +103,7 @@ export const Features = () => {
           </div>
 
           {/* Card 5: Wide */}
-          <div className="md:col-span-2 bg-[#839CC7]/10 rounded-[2rem] p-8 flex flex-col md:flex-row items-center gap-8 bento-card border border-[#839CC7]/20">
+          <div className="md:col-span-2 bg-[#839CC7]/10 rounded-4xl p-8 flex flex-col md:flex-row items-center gap-8 bento-card border border-[#839CC7]/20">
             <div className="flex-1">
               <h3 className="font-serif-brand text-2xl mb-3 text-[#3B3B3B]">
                 Escalas Automáticas com Templates

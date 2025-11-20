@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, Menu, X } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 import { HourglassLogo } from "./HourglassLogo";
 
 interface NavigationProps {
@@ -20,8 +21,17 @@ export const Navigation = ({
   mobileMenuOpen,
   setMobileMenuOpen,
 }: NavigationProps) => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLogoClick = () => {
+    if (pathname === "/") {
+      // Se estiver na página inicial, apenas rola para o topo
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Se estiver em outra página, navega para a inicial
+      router.push("/");
+    }
   };
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -56,7 +66,7 @@ export const Navigation = ({
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div
             className="flex items-center gap-2 group cursor-pointer"
-            onClick={scrollToTop}
+            onClick={handleLogoClick}
           >
             <div className="bg-[#3B3B3B] text-[#C3FFD4] p-2 rounded-lg group-hover:rotate-180 transition-transform duration-700">
               <HourglassLogo className="w-6 h-6" />
@@ -82,9 +92,14 @@ export const Navigation = ({
                 {link.label}
               </a>
             ))}
-            <button className="bg-[#3B3B3B] text-white px-6 py-2.5 rounded-full hover:bg-[#4A5568] transition-all duration-300 flex items-center gap-2 hover:scale-105">
+            <a
+              href="https://app.turnus.app.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#3B3B3B] text-white px-6 py-2.5 rounded-full hover:bg-[#4A5568] transition-all duration-300 flex items-center gap-2 hover:scale-105"
+            >
               Acessar Sistema <ArrowRight size={16} />
-            </button>
+            </a>
           </div>
 
           <button
@@ -116,9 +131,14 @@ export const Navigation = ({
                   {link.label}
                 </a>
               ))}
-              <button className="bg-[#3B3B3B] text-white px-6 py-3 rounded-full hover:bg-[#4A5568] transition-all duration-300 flex items-center justify-center gap-2 mt-4">
+              <a
+                href="https://app.turnus.app.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#3B3B3B] text-white px-6 py-3 rounded-full hover:bg-[#4A5568] transition-all duration-300 flex items-center justify-center gap-2 mt-4"
+              >
                 Acessar Sistema <ArrowRight size={16} />
-              </button>
+              </a>
             </div>
           </div>
         </div>

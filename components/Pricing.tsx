@@ -6,6 +6,7 @@ import {
   LifeBuoy,
   Mail,
   MessageCircle,
+  Monitor,
   Smartphone,
   Users,
 } from "lucide-react";
@@ -14,6 +15,12 @@ interface PricingProps {
   annualBilling: boolean;
   setAnnualBilling: (value: boolean) => void;
 }
+
+// Features comuns a todos os planos
+const commonFeatures = [
+  { icon: Monitor, text: "Plataforma Web de Gerenciamento" },
+  { icon: Smartphone, text: "App para Plantonistas*" },
+];
 
 const plans = [
   {
@@ -33,8 +40,7 @@ const plans = [
         text: "1 escala (setor)",
         highlight: "1 escala",
       },
-      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
-      { icon: Mail, text: "Notificações via E-mail", highlight: "E-mail" },
+      { icon: Mail, text: "Notificações via E-mail" },
       { icon: LifeBuoy, text: "Suporte via E-mail" },
     ],
     buttonText: "Começar Agora",
@@ -59,7 +65,6 @@ const plans = [
         text: "Até 5 escalas (setores)",
         highlight: "5 escalas",
       },
-      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
       { icon: Mail, text: "Notificações via E-mail" },
       {
         icon: MessageCircle,
@@ -90,7 +95,6 @@ const plans = [
         text: "Até 10 escalas (setores)",
         highlight: "10 escalas",
       },
-      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
       { icon: Mail, text: "Notificações via E-mail" },
       {
         icon: MessageCircle,
@@ -118,10 +122,9 @@ const plans = [
         text: "Escalas customizadas",
         highlight: "Customizado",
       },
-      { icon: Smartphone, text: "App para Plantonistas*", highlight: "*" },
       { icon: Check, text: "Infraestrutura própria" },
       { icon: Check, text: "Gerente de Conta Dedicado" },
-      { icon: Check, text: "Onboarding Presencial**", highlight: "**" },
+      { icon: Check, text: "Onboarding Presencial**" },
       { icon: LifeBuoy, text: "Suporte Prioritário Dedicado" },
     ],
     buttonText: "Falar com Consultor",
@@ -138,20 +141,20 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
       id="planos"
     >
       {/* Decorative Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#4A5568]/30 via-[#3B3B3B] to-[#3B3B3B] -z-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-[#4A5568]/30 via-[#3B3B3B] to-[#3B3B3B] -z-10"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-serif-brand text-4xl md:text-5xl text-white mb-6">
+        <div className="text-center mb-12">
+          <h2 className="font-serif-brand text-4xl md:text-5xl text-white mb-4">
             Planos que crescem com sua operação
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-300 max-w-2xl mx-auto mb-10">
             Escolha a estrutura ideal para sua unidade. Cancele ou altere quando
             quiser.
           </p>
 
           {/* Toggle Switch */}
-          <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="flex items-center justify-center gap-4">
             <span
               className={`text-sm font-medium transition-colors ${
                 annualBilling ? "text-white" : "text-gray-400"
@@ -191,7 +194,28 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
+        {/* Features Comuns - Badge */}
+        <div className="max-w-3xl mx-auto mb-16 bg-[#4A5568]/30 backdrop-blur-sm rounded-2xl p-6 border border-[#C3FFD4]/20">
+          <p className="text-center text-[#C3FFD4] font-bold text-sm uppercase tracking-wider mb-5">
+            ✓ Incluído em todos os planos
+          </p>
+          <div className="flex flex-wrap justify-center gap-8">
+            {commonFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 text-white text-sm"
+                >
+                  <Icon size={18} className="text-[#C3FFD4]" />
+                  <span>{feature.text}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -209,7 +233,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
                 </div>
               )}
               <div
-                className={`mb-4 ${
+                className={`mb-3 ${
                   plan.featured ? "text-[#C3FFD4]" : "text-[#839CC7]"
                 } font-bold tracking-widest text-xs uppercase`}
               >
@@ -218,18 +242,18 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
               <h3
                 className={`font-serif-brand text-2xl ${
                   plan.featured ? "text-white" : plan.textColor
-                } mb-2`}
+                } mb-3`}
               >
                 {plan.name}
               </h3>
               <p
                 className={`text-sm ${
                   plan.featured ? "text-gray-400" : "text-gray-600"
-                } mb-6 h-10`}
+                } mb-8 h-10`}
               >
                 {plan.description}
               </p>
-              <div className="flex items-baseline gap-1 mb-8">
+              <div className="flex items-baseline gap-1 mb-10">
                 {plan.priceMonthly ? (
                   <>
                     <span
@@ -264,7 +288,7 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
               </div>
 
               <div
-                className={`space-y-4 mb-8 flex-grow ${
+                className={`space-y-3 mb-8 grow ${
                   plan.featured ? "text-gray-300" : ""
                 }`}
               >
@@ -314,12 +338,12 @@ export const Pricing = ({ annualBilling, setAnnualBilling }: PricingProps) => {
         </div>
 
         {/* Footer note for pricing */}
-        <div className="text-center mt-12 space-y-3">
+        <div className="text-center mt-16 space-y-4">
           <p className="text-gray-300 text-sm">
             Todos os planos incluem atualizações gratuitas e segurança de dados
             padrão LGPD.
           </p>
-          <div className="space-y-1">
+          <div className="space-y-2">
             <p className="text-gray-400 text-xs">
               * App nativo disponível quando lançado
             </p>
